@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, Dimensions } from 'react-native'
+import { View, Text, StyleSheet, Image, Dimensions, ScrollView } from 'react-native'
 import React from 'react'
 import PrimaryButton from '../components/ui/PrimaryButton'
 import Title from '../components/ui/Title'
@@ -7,6 +7,7 @@ import colors from '../constants/Colors'
 const GameOverScreen = ({startNewgame, roundsNum, pickedNum}) => {
   
   return (
+    <ScrollView style={{flex:1}}>
     <View style={styles.root} >
       <Title>GAME OVER!</Title>
       <View style={styles.imgCon}>
@@ -16,6 +17,7 @@ const GameOverScreen = ({startNewgame, roundsNum, pickedNum}) => {
       <Text style={styles.highlight}>{pickedNum}</Text></Text>
       <PrimaryButton onPress={startNewgame} >Start New game!</PrimaryButton>
     </View>
+    </ScrollView>
   )
 }
 

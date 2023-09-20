@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Alert, FlatList } from 'react-native'
+import { View, Text, StyleSheet, Alert, FlatList, ScrollView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import Title from '../components/ui/Title'
 import NumberContainer from '../components/game/NumberContainer';
@@ -63,7 +63,7 @@ const GameScreen = ({pickedNum,setGameOver,gameOverHandler}) => {
   const guessListLength = guessRounds.length
 
   return (
-    
+    <ScrollView style={{flex:1}}>
       <View style={styles.screen}>
         <Title>Opponent's Guess</Title>
         <NumberContainer>{currentGuess}</NumberContainer>
@@ -90,6 +90,7 @@ const GameScreen = ({pickedNum,setGameOver,gameOverHandler}) => {
         />
         </View>
       </View>
+      </ScrollView>
     
   )
 }
